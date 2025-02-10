@@ -1,4 +1,4 @@
-# 🕵️‍♂️ The Disguised Artifact - Recovering a Hidden Flag
+# 🕵️‍♂️ The Disguised Artifact
 🔍 Challenge Overview
 We are given a file named FLAG.hta, but it appears to be corrupted. Our task is to analyze and repair the file to uncover the hidden flag.
 
