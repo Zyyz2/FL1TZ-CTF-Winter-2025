@@ -3,6 +3,7 @@
 We are given a capture file and need to analyze ICMP packets to uncover a hidden flag.
 
 ## 📌 Steps to Solve
+
 ### 1️⃣ Inspecting ICMP Packets
 Using Wireshark, we analyze the capture file and observe that the TTL (Time-To-Live) values in the ICMP request packets are changing.
 
@@ -20,8 +21,8 @@ icmp → Captures only ICMP packets.
 icmp.type == 8 → Filters only ICMP request packets.
 
 ### 4️⃣ Extracting the Flag
-To automate the extraction process, we write a Python script that:
 
+To automate the extraction process, we write a Python script that:
 Reads the TTL values from the filtered ICMP request packets.
 Extracts the last two significant bits from each value.
 Concatenates the bits to form a binary string.
