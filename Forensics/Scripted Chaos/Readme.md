@@ -47,3 +47,5 @@ We submit the flag , but it is still incorrect ???
 Oh ! We almost forgot that file we were given earlier flag.tar protected with a password, so this flag might be the password of the tar file !
 Using the flag from Pastebin as the password, we extract flag.tar.
 Inside, we find flag.txt, which contains the final flag. 🎉
+
+## I'll update the files found inside the challenge so this can facilitate reading the writeup .
