@@ -1,7 +1,7 @@
 # 🕵️ RAMDive - Memory Forensics Investigation
 ## 🔥 Background: You’ll want to read this for the full ride and to enjoy the writeup !!!
 
-### Special thanks to my partners in cyber-crime, Bitraven and Ghr4b, for inspiring this chaotic, malware-filled challenge. Without you, I wouldn’t have had the pure joy of digging through memory dumps and malware. You two are the real MVPs! 😎💻
+### 🔱 Special thanks to my partners in cyber-crime, Bitraven and Ghr4b, for inspiring this chaotic, malware-filled challenge. Without you, I wouldn’t have had the pure joy of digging through memory dumps and malware. You two are the real MVPs! 😎💻
 
 ### This challenge is based on a real incident: my friend, BitRaven (the crypto wizard behind FL1TZ CTF), managed to turn his PC into a digital disaster when malware—yep, from Cloudflare of all places—came in and completely wrecked it. As a lover of malware and trojans particularly i was inspired by this iconic malware so, this got me thinking: “What if I turn this chaos into a memory forensics challenge?” So, we did the most logical thing ever. Bitraven, extracted the malicious executable, and bam, I dove deep into a memory forensics investigation. What did we find? A network trojan with backdoor functionality—basically a little digital gremlin that pokes around your system, steals everything, and calls home to its attacker in Amsterdam. Classic, right? 😈
 
