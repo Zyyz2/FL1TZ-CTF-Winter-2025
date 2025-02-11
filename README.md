@@ -8,7 +8,7 @@ I had the pleasure of being the author of several Forensics challenges , the OSI
 ### To solve these tasks, you needed some top-tier forensic tools, including:
 
 #### - Wireshark 🕵️‍♂️ – Analyzing network traffic and extracting valuable clues.
-#### - Python 🐍 – Crafting scripts to automate forensic analysis and carve out artifacts.
+#### - Volatility 🧠 – Performing in-depth memory forensics to uncover hidden processes, injected code, and system artifacts.  #### - Python 🐍 – Crafting scripts to automate forensic analysis and carve out artifacts.
 #### - Docker 🐳 – Setting up remote forensic environments for controlled investigations.
 #### - FTK Imager 🛠️ – Capturing and examining memory dumps for hidden traces.
 #### - ANY.RUN & VirusTotal 🦠 – Sandboxing malware to study its behavior.
