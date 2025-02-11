@@ -4,10 +4,10 @@ The Master File Table (MFT) is a critical component of the NTFS file system. It 
 
 ## 📌 Steps to Solve
 ### 1️⃣ Parsing the MFT File
-We use LECmd.exe, a tool from Eric Zimmermann, to parse the MFT file into a CSV file for easy searching and analysis.
+We use MFTEcmd.exe, a tool from Eric Zimmermann, to parse the MFT file into a CSV file for easy searching and analysis.
 
 #### 🔹 Command to extract MFT data:
-LECmd.exe -f "$mft" --csv "file.csv"
+MFTEcmd.exe -f "$mft" --csv "file.csv"
 This generates file.csv, containing detailed metadata about all files recorded in the MFT.
 
 ### 2️⃣ Investigating Key Questions
