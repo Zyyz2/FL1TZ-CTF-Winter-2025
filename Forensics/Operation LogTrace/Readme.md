@@ -81,8 +81,8 @@ Log Forensics: How to analyze and trace attacker activity from event logs, focus
 Credential Dumping & Pass-the-Hash: Learn how attackers use stolen password hashes to bypass authentication systems.
 Persistence Mechanisms: Understand how attackers maintain access through registry modifications and hidden files.
 # 🎉 Conclusion
-## By investigating these event logs and analyzing the attacker’s actions, you’ll uncover the full scope of the attack, from privilege escalation to file exfiltration. It's like piecing together the mystery in a cyber-thriller, one event log at a time.
+### By investigating these event logs and analyzing the attacker’s actions, you’ll uncover the full scope of the attack, from privilege escalation to file exfiltration. It's like piecing together the mystery in a cyber-thriller, one event log at a time.
 
-## Enjoy the challenge, and remember—trust no one, especially when dealing with hidden streams! 🕵️‍♂️
+### Enjoy the challenge, and remember—trust no one, especially when dealing with hidden streams! 🕵️‍♂️
 
-## May your logs be clean, your hashes cracked, and your investigations always successful! 😎
+### May your logs be clean, your hashes cracked, and your investigations always successful! 😎
