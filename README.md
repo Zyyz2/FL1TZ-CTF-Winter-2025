@@ -22,7 +22,7 @@ I put a lot of effort into designing these Forensics and Malware Analysis tasks,
 ## 📩 Get in Touch
 If you have any feedback, questions, or just want to chat about cybersecurity, feel free to reach out!
 
-### 🔹 LinkedIn: [Mohamed Aziz Rahmouni](https://www.linkedin.com/in/azizrahmouni/)
-### 🔹 Email: azizrahmouni@gmail.com
+#### 🔹 LinkedIn: [Mohamed Aziz Rahmouni](https://www.linkedin.com/in/azizrahmouni/)
+#### 🔹 Email: azizrahmouni@gmail.com
 
 ## Thanks for participating, and keep hacking! 💀🔥
