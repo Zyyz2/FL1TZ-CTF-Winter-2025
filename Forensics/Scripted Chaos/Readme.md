@@ -1,4 +1,4 @@
-# 🌀 Scripted Chaos - Unraveling the Obfuscation
+# 🌀 Scripted Chaos : File Carving and decoding !
 🔍 Challenge Overview
 We are given a capture file and need to analyze HTTP packets to uncover the hidden flag.
 
