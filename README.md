@@ -24,5 +24,8 @@ If you have any feedback, questions, or just want to chat about cybersecurity, f
 
 #### 🔹 LinkedIn: [Mohamed Aziz Rahmouni](https://www.linkedin.com/in/azizrahmouni/)
 #### 🔹 Email: azizrahmouni@gmail.com
+#### 🔹 Facebook: [Aziz Rahmouni](https://www.facebook.com/Aziz.Rahmouni4/)  
+#### 🔹 Instagram: [Aziz Rahmouni](https://www.instagram.com/aziz_rahmouni4/)
 
-## Thanks for participating, and keep hacking! 💀🔥
+
+## Thanks for participating, Zyyz🔱 sends his regards and keep hacking! 💀🔥
