@@ -2,7 +2,7 @@
 Welcome to FL1TZ CTF, a competition designed to test and sharpen your hacking skills! This CTF featured a mix of categories, including Cryptography, Reverse Engineering, Forensics, OSINT, Web, Misc, Malware Analysis, Hardware, and Pwn, ensuring a challenging and exciting experience for all players.
 
 ## 🔍 Forensics & Malware Analysis – My Contribution
-I had the pleasure of being the author of several Forensics challenges and the Malware Analysis task in this CTF! From dissecting event logs to unraveling complex malware behavior, I aimed to create realistic, intense, and fun challenges that would push your investigative skills to the limit.
+I had the pleasure of being the author of several Forensics challenges , the OSINT tasks and the Malware Analysis task in this CTF! From dissecting event logs to unraveling complex malware behavior, I aimed to create realistic, intense, and fun challenges that would push your investigative skills to the limit.
 
 ## 🔧 Tools You Used in Forensics
 ### To solve these tasks, you needed some top-tier forensic tools, including:
