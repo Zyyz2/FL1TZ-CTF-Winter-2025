@@ -7,14 +7,14 @@ I had the pleasure of being the author of several Forensics challenges and the M
 ## 🔧 Tools You Used in Forensics
 ### To solve these tasks, you needed some top-tier forensic tools, including:
 
-#### Wireshark 🕵️‍♂️ – Analyzing network traffic and extracting valuable clues.
-#### Python 🐍 – Crafting scripts to automate forensic analysis and carve out artifacts.
-#### Docker 🐳 – Setting up remote forensic environments for controlled investigations.
-#### FTK Imager 🛠️ – Capturing and examining memory dumps for hidden traces.
-#### ANY.RUN & VirusTotal 🦠 – Sandboxing malware to study its behavior.
-#### Event Viewer 📜 – Tracing attacker actions through Windows event logs.
-#### MFT Parsers (MFT Explorer, MFTEcmd.exe by Eric Zimmermann) 💾 : Analyzing Master File Table (MFT) records to uncover deleted files, timestamps, and hidden activity.
-#### Artivive 🖼️ – A unique tool used to scan and uncover hidden clues.
+#### - Wireshark 🕵️‍♂️ – Analyzing network traffic and extracting valuable clues.
+#### - Python 🐍 – Crafting scripts to automate forensic analysis and carve out artifacts.
+#### - Docker 🐳 – Setting up remote forensic environments for controlled investigations.
+#### - FTK Imager 🛠️ – Capturing and examining memory dumps for hidden traces.
+#### - ANY.RUN & VirusTotal 🦠 – Sandboxing malware to study its behavior.
+#### - Event Viewer 📜 – Tracing attacker actions through Windows event logs.
+#### - MFT Parsers (MFT Explorer, MFTEcmd.exe by Eric Zimmermann) 💾 : Analyzing Master File Table (MFT) records to uncover deleted files, timestamps, and hidden activity.
+#### - Artivive 🖼️ – A unique tool used to scan and uncover hidden clues.
 
 ## 🚀 Hope You Enjoyed My Challenges!
 I put a lot of effort into designing these Forensics and Malware Analysis tasks, making them realistic, challenging, and fun. Whether you were tracing an attack through logs, reversing a malicious payload, or investigating memory artifacts, I hope you had a great time playing!
