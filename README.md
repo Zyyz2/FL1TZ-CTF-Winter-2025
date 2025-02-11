@@ -28,4 +28,4 @@ If you have any feedback, questions, or just want to chat about cybersecurity, f
 #### 🔹 Instagram: [Aziz Rahmouni](https://www.instagram.com/aziz_rahmouni4/)
 
 
-## Thanks for participating, Zyyz🔱 sends his regards and keep hacking! 💀🔥
+## Thanks for participating, Zyyz🔱 sends his regards !
