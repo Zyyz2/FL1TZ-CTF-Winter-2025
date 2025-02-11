@@ -7,6 +7,7 @@ The Master File Table (MFT) is a critical component of the NTFS file system. It 
 We use MFTEcmd.exe, a tool from Eric Zimmermann, to parse the MFT file into a CSV file for easy searching and analysis.
 
 #### 🔹 Command to extract MFT data:
+'''bash
 MFTEcmd.exe -f "$mft" --csv "file.csv"
 This generates file.csv, containing detailed metadata about all files recorded in the MFT.
 
