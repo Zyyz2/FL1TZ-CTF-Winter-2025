@@ -18,7 +18,9 @@ To fix the corruption, you need to correct the file header. ISO files typically 
 You can mount the ISO file using the terminal or a tool like PowerISO.
 
 On Linux, use the following command:
+```
 sudo mount -o loop FLAG.iso /mnt/iso
+```
 On Windows, use a tool like PowerISO or WinCDEmu to mount the ISO file.
 
 ### 5️⃣ Fixing the Corrupted Image
