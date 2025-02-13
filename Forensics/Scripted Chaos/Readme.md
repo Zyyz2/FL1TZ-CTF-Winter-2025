@@ -48,4 +48,4 @@ Oh ! We almost forgot that file we were given earlier flag.tar protected with a 
 Using the flag from Pastebin as the password, we extract flag.tar.
 Inside, we find flag.txt, which contains the final flag. 🎉
 
-# Important ! : I'll update the files found inside the challenge so this can facilitate reading the writeup .
+## Important ! : I'll update the files found inside the challenge so this can facilitate reading the writeup .
