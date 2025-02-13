@@ -3,7 +3,7 @@
 In this challenge, you'll need to investigate a cyber attack by analyzing Windows event logs. The task involves reviewing security logs, system logs, and PowerShell scripts to trace the actions of an attacker. The goal is to uncover what happened during the attack, from how the attacker got in to what they did and how they tried to cover their tracks. Special thanks to Stoura, my first-year professor, who inspired this whole challenge. 😎
 
 ## 💡 Task Background
-### In this investigation, I executed several actions, including running PowerShell commands, opening HTTP and TCP connections, downloading malicious files, escalating privileges, viewing hashes, and even trying Pass-the-Hash. This is a deep dive into event logs, uncovering suspicious activities and malicious actions from the attack.
+#### In this investigation, I executed several actions, including running PowerShell commands, opening HTTP and TCP connections, downloading malicious files, escalating privileges, viewing hashes, and even trying Pass-the-Hash. This is a deep dive into event logs, uncovering suspicious activities and malicious actions from the attack.
 
 ## 📝 Challenge Questions & Answers with Explanations
 ### 1. When was the new user created?
