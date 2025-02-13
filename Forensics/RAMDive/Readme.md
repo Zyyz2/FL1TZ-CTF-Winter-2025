@@ -1,27 +1,27 @@
 # 🕵️ RAMDive - Memory Forensics Investigation
 
-### 🔱 Special thanks to my partners in cyber-crime, Bitraven and Ghr4b, for inspiring this chaotic, malware-filled challenge. Without you, I wouldn’t have had the pure joy of digging through memory dumps and malware. You two are the real MVPs! 😎💻
+#### 🔱 Special thanks to my partners in cyber-crime, Bitraven and Ghr4b, for inspiring this chaotic, malware-filled challenge. Without you, I wouldn’t have had the pure joy of digging through memory dumps and malware. You two are the real MVPs! 😎💻
 
 ## 🔥 Background: You’ll want to read this for the full ride and to enjoy the writeup !!!
 
-### This challenge is based on a real incident: my friend, BitRaven (the crypto wizard behind FL1TZ CTF), managed to turn his PC into a digital disaster when malware—yep, from Cloudflare of all places—came in and completely wrecked it.
-### As a lover of malware and trojans particularly i was inspired by this iconic malware so, this got me thinking: “What if I turn this chaos into a memory forensics challenge?” So, we did the most logical thing ever.
-### Bitraven, extracted the malicious executable, and bam, I dove deep into a memory forensics investigation. What did we find? A network trojan with backdoor functionality—basically a little digital gremlin that pokes around your system, steals everything, and calls home to its attacker in Amsterdam. Classic, right? 😈
+#### This challenge is based on a real incident: my friend, BitRaven (the crypto wizard behind FL1TZ CTF), managed to turn his PC into a digital disaster when malware—yep, from Cloudflare of all places—came in and completely wrecked it.
+#### As a lover of malware and trojans particularly i was inspired by this iconic malware so, this got me thinking: “What if I turn this chaos into a memory forensics challenge?” So, we did the most logical thing ever.
+#### Bitraven, extracted the malicious executable, and bam, I dove deep into a memory forensics investigation. What did we find? A network trojan with backdoor functionality—basically a little digital gremlin that pokes around your system, steals everything, and calls home to its attacker in Amsterdam. Classic, right? 😈
 
 ## 🚨 Malware Analysis Summary
-### The malware is a network-based remote access trojan (RAT).
-### It carves the file system, opens a TCP connection, and exports user files.
-### It specifically targets Bitcoin wallets and temporary files.
-### It loads jsc.exe, a .NET-compiled payload, as part of its attack chain.
-### 🛠 Forensic Analysis using Volatility 3
-### To analyze the memory dump, we used Volatility 3, a powerful memory forensics tool. Below are the findings from different Volatility plugins, along with explanations.
+#### The malware is a network-based remote access trojan (RAT).
+#### It carves the file system, opens a TCP connection, and exports user files.
+#### It specifically targets Bitcoin wallets and temporary files.
+#### It loads jsc.exe, a .NET-compiled payload, as part of its attack chain.
+#### 🛠 Forensic Analysis using Volatility 3
+#### To analyze the memory dump, we used Volatility 3, a powerful memory forensics tool. Below are the findings from different Volatility plugins, along with explanations.
 
 ## Quick explanation about volatility tool :
-### Volatility is like your digital detective—but instead of a magnifying glass, it uses RAM dumps!
-### 🕵️‍♂️ It lets you peer into the chaos of a computer's memory, uncovering everything that was happening while the system was in action.
-### Think of it like digging through the memory drawers of your computer to find the juicy details: what processes were running, what secret network connections were happening, and even what your computer was doing behind your back (like running malware!). 
-### Using Volatility, you can find out if a malicious process was lurking in the shadows, what user accounts were snooping around, and even the last-minute panic activity before things went south.
-### Basically, it’s like CSI for your computer's brain—but instead of solving murders, you're catching cybercriminals! 
+#### Volatility is like your digital detective—but instead of a magnifying glass, it uses RAM dumps!
+#### 🕵️‍♂️ It lets you peer into the chaos of a computer's memory, uncovering everything that was happening while the system was in action.
+#### Think of it like digging through the memory drawers of your computer to find the juicy details: what processes were running, what secret network connections were happening, and even what your computer was doing behind your back (like running malware!). 
+#### Using Volatility, you can find out if a malicious process was lurking in the shadows, what user accounts were snooping around, and even the last-minute panic activity before things went south.
+#### Basically, it’s like CSI for your computer's brain—but instead of solving murders, you're catching cybercriminals! 
 
 ```
 python3 vol.py -f memdump.mem windows.cmdline
