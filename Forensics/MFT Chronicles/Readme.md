@@ -7,8 +7,6 @@
 ```
 MFTEcmd.exe -f "$mft" --csv "file.csv"
 ```
-This generates file.csv, containing detailed metadata about all files recorded in the MFT.
-
 ###  1. Identify the malicious .lnk file.
 - Answer: malware.exe.lnk
 - Explanation: .lnk files are Windows shortcut files. Attackers often use .lnk files to execute malicious payloads while disguising them as legitimate shortcuts. In this case, malware.exe.lnk likely points to an executable file used in the attack.
