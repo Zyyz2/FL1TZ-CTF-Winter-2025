@@ -1,9 +1,9 @@
 # 🕵️‍♂️ Operation LogTrace: A Forensic Adventure
 ## 🔍 Challenge Overview
-In this challenge, you'll need to investigate a cyber attack by analyzing Windows event logs. The task involves reviewing security logs, system logs, and PowerShell scripts to trace the actions of an attacker. The goal is to uncover what happened during the attack, from how the attacker got in to what they did and how they tried to cover their tracks. Special thanks to Stoura, my first-year professor, who inspired this whole challenge. 
+- In this challenge, you'll need to investigate a cyber attack by analyzing Windows event logs. The task involves reviewing security logs, system logs, and PowerShell scripts to trace the actions of an attacker. The goal is to uncover what happened during the attack, from how the attacker got in to what they did and how they tried to cover their tracks. Special thanks to Stoura, my first-year professor, who inspired this whole challenge. 
 
 ##  Task Background
-#### In this investigation, I executed several actions, including running PowerShell commands, opening HTTP and TCP connections, downloading malicious files, escalating privileges, viewing hashes, and even trying Pass-the-Hash. This is a deep dive into event logs, uncovering suspicious activities and malicious actions from the attack.
+- In this investigation, I executed several actions, including running PowerShell commands, opening HTTP and TCP connections, downloading malicious files, escalating privileges, viewing hashes, and even trying Pass-the-Hash. This is a deep dive into event logs, uncovering suspicious activities and malicious actions from the attack.
 
 ## 📝 Challenge Questions & Answers with Explanations
 ### 1. When was the new user created?
@@ -70,12 +70,8 @@ In this challenge, you'll need to investigate a cyber attack by analyzing Window
 - Answer: trustno1
 
 - Log Type: Event ID 15 in Sysmon
-- Explanation: The password stored inside the hidden file hidden_stream.txt was trustno1. This file might be a key to accessing other systems or data, and this password could be used by the attacker for further access or lateral movement within the network.
-## Tools Used:
-- Event Logs Analysis: To trace the actions of the attacker by reviewing security logs, system logs, and PowerShell logs.
-- PowerShell Scripts: Investigating PowerShell scripts used for privilege escalation and downloading malware.
-- Hash Analysis: Understanding credential theft through pass-the-hash and identifying key password hashes.
-- Registry Monitoring: To identify persistence mechanisms set by the attacker through registry modifications.
+- Explanation: The password hash is stored inside the hidden file hidden_stream.txt .Use an online tool to crack the hash like crackstation and you will get the password.
+
 ## What You'll Learn:
 - Log Forensics: How to analyze and trace attacker activity from event logs, focusing on user creation, privilege escalation, and credential dumping.
 Credential Dumping & Pass-the-Hash: Learn how attackers use stolen password hashes to bypass authentication systems.
