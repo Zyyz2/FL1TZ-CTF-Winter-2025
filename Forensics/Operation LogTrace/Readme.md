@@ -71,18 +71,18 @@ In this challenge, you'll need to investigate a cyber attack by analyzing Window
 
 - Log Type: Event ID 15 in Sysmon
 - Explanation: The password stored inside the hidden file hidden_stream.txt was trustno1. This file might be a key to accessing other systems or data, and this password could be used by the attacker for further access or lateral movement within the network.
-## 🛠️ Tools Used:
+## Tools Used:
 - Event Logs Analysis: To trace the actions of the attacker by reviewing security logs, system logs, and PowerShell logs.
 - PowerShell Scripts: Investigating PowerShell scripts used for privilege escalation and downloading malware.
 - Hash Analysis: Understanding credential theft through pass-the-hash and identifying key password hashes.
 - Registry Monitoring: To identify persistence mechanisms set by the attacker through registry modifications.
-## 🚨 What You'll Learn:
+## What You'll Learn:
 - Log Forensics: How to analyze and trace attacker activity from event logs, focusing on user creation, privilege escalation, and credential dumping.
 Credential Dumping & Pass-the-Hash: Learn how attackers use stolen password hashes to bypass authentication systems.
 Persistence Mechanisms: Understand how attackers maintain access through registry modifications and hidden files.
-# 🎉 Conclusion
-### By investigating these event logs and analyzing the attacker’s actions, you’ll uncover the full scope of the attack, from privilege escalation to file exfiltration. It's like piecing together the mystery in a cyber-thriller, one event log at a time.
+# Conclusion
+- By investigating these event logs and analyzing the attacker’s actions, you’ll uncover the full scope of the attack, from privilege escalation to file exfiltration. It's like piecing together the mystery in a cyber-thriller, one event log at a time.
 
-### Enjoy the challenge, and remember—trust no one, especially when dealing with hidden streams! 🕵️‍♂️
+- Enjoy the challenge, and remember—trust no one, especially when dealing with hidden streams! 🕵️‍♂️
 
-### May your logs be clean, your hashes cracked, and your investigations always successful! 😎
+- May your logs be clean, your hashes cracked, and your investigations always successful! 😎
