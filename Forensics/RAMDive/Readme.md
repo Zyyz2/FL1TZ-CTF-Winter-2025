@@ -4,30 +4,29 @@
 
 ## 🔥 Background: You’ll want to read this for the full ride and to enjoy the writeup !!!
 
-#### This challenge is based on a real incident: my friend, Bitraven (the crypto wizard behind FL1TZ CTF), managed to turn his PC into a digital disaster when malware—yep, from Cloudflare of all places—came in and completely wrecked it.
-#### As a lover of malware and trojans particularly i was inspired by this iconic malware so, this got me thinking: “What if I turn this chaos into a memory forensics challenge?” So, we did the most logical thing ever.
-#### Bitraven, extracted the malicious executable, and bam, I dove deep into a memory forensics investigation. What did we find? A network trojan with backdoor functionality—basically a little digital gremlin that pokes around your system, steals everything, and calls home to its attacker in Amsterdam. Classic, right? 😈
+- This challenge is based on a real incident: my friend, Bitraven (the crypto wizard behind FL1TZ CTF), managed to turn his PC into a digital disaster when malware—yep, from Cloudflare of all places—came in and completely wrecked it.
+- As a lover of malware and trojans particularly i was inspired by this iconic malware so, this got me thinking: “What if I turn this chaos into a memory forensics challenge?” So, we did the most logical thing ever.
+- Bitraven, extracted the malicious executable, and bam, I dove deep into a memory forensics investigation. What did we find? A network trojan with backdoor functionality—basically a little digital gremlin that pokes around your system, steals everything, and calls home to its attacker in Amsterdam. Classic, right? 😈
 
 ## 🚨 Malware Analysis Summary
-#### The malware is a network-based remote access trojan (RAT).
-#### It carves the file system, opens a TCP connection, and exports user files.
-#### It specifically targets Bitcoin wallets and temporary files.
-#### It loads jsc.exe, a .NET-compiled payload, as part of its attack chain.
-#### 🛠 Forensic Analysis using Volatility 3
-#### To analyze the memory dump, we used Volatility 3, a powerful memory forensics tool. Below are the findings from different Volatility plugins, along with explanations.
+- The malware is a network-based remote access trojan (RAT).
+- It carves the file system, opens a TCP connection, and exports user files.
+- It specifically targets Bitcoin wallets and temporary files.
+- It loads jsc.exe, a .NET-compiled payload, as part of its attack chain.
+- 🛠 Forensic Analysis using Volatility 3
+- To analyze the memory dump, we used Volatility 3, a powerful memory forensics tool. Below are the findings from different Volatility plugins, along with explanations.
 
 ## Quick explanation about volatility tool :
-#### Volatility is like your digital detective—but instead of a magnifying glass, it uses RAM dumps!
-#### 🕵️‍♂️ It lets you peer into the chaos of a computer's memory, uncovering everything that was happening while the system was in action.
-#### Think of it like digging through the memory drawers of your computer to find the juicy details: what processes were running, what secret network connections were happening, and even what your computer was doing behind your back (like running malware!). 
-#### Using Volatility, you can find out if a malicious process was lurking in the shadows, what user accounts were snooping around, and even the last-minute panic activity before things went south.
-#### Basically, it’s like CSI for your computer's brain—but instead of solving murders, you're catching cybercriminals! 
+- Volatility is like your digital detective—but instead of a magnifying glass, it uses RAM dumps!
+- It lets you peer into the chaos of a computer's memory, uncovering everything that was happening while the system was in action.
+- Think of it like digging through the memory drawers of your computer to find the juicy details: what processes were running, what secret network connections were happening, and even what your computer was doing behind your back (like running malware!). 
+- Using Volatility, you can find out if a malicious process was lurking in the shadows, what user accounts were snooping around, and even the last-minute panic activity before things went south.
+- Basically, it’s like CSI for your computer's brain—but instead of solving murders, you're catching cybercriminals! 
 
 
 ## 📌 Key Findings
 ### 🔹 1. Path of the malicious process
 Answer: C:\Windows\Microsoft.NET\Framework\v4.0.30319\jsc.exe
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.cmdline
 ```
@@ -37,7 +36,6 @@ This suggests that the malware is abusing .NET components to execute its payload
 
 ### 🔹 2. Find the SID and the username the malware was running under
 Answer: S-1-5-21-1261973874-1698488304-1739942524-1001_Zyyz
-Volatility Plugin:
 ```
 python3 vol.py -f memdump.mem windows.getsids.GetSIDS
 ```
@@ -47,7 +45,6 @@ Here, the malware ran under the user Zyyz, meaning the attacker executed it with
 
 ### 🔹 3. NTLM hash of the user
 Answer: 7eb59e280c8fbc878955e0269cbe2ae9
-Volatility Plugin:
 ```
 python3 vol.py -f memdump.mem windows.getsids.hashdump
 ```
@@ -57,7 +54,6 @@ Attackers can use Pass-the-Hash (PtH) attacks to authenticate without knowing th
 
 ### 🔹 4. City of the attacker
 Answer: Amsterdam
-Volatility Plugin:
 ```
 python3 vol.py -f memdump.mem windows.netscan
 ```
@@ -68,7 +64,6 @@ Reverse lookup of the IP address associated with jsc.exe revealed that it was li
 
 ### 🔹 5. Ending address of the executable
 Answer: 0xf8dfff
-Volatility Plugin:
 ```
 python3 vol.py -f memdump.mem windows.vadinfo
 ```
@@ -78,7 +73,6 @@ This is useful for identifying code injection or memory-resident malware.
 
 ### 🔹 6. Memory protection flag of the process
 Answer: PAGE_EXECUTE_WRITECOPY
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.vadinfo
 ```
@@ -88,7 +82,6 @@ This is often used by malware to inject shellcode into processes.
 
 ### 🔹 7. The process manipulated a DLL for cryptographic functions
 Answer: \Windows\SysWOW64\cryptbase.dll
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.vadinfo
 ```
@@ -98,7 +91,6 @@ The malware likely used it to steal sensitive data like passwords, encryption ke
 
 ### 🔹 8. Name of the computer
 Answer: DESKTOP-AJM6HKU
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.envars
 ```
@@ -108,7 +100,6 @@ This is useful for the attacker to identify unique victims.
 
 ### 🔹 9. The process used a temporary variable. Give its path.
 Answer: C:\Users\Zyyz\AppData\Local\Temp
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.envars
 ```
@@ -118,7 +109,6 @@ These are often deleted after execution to cover tracks.
 
 ### 🔹 10. Creation time of the process
 Answer: 2025-02-04 03:21:09 UTC
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.pstree
 ```
@@ -129,7 +119,6 @@ This timestamp tells us exactly when the malware was executed on the system.
 ### 🔹 11. The process interacted with a Windows user registry. Give its path.
 Answer:
 HKEY_USERS\S-1-5-21-1261973874-1698488304-1739942524-1001\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.handles
 ```
@@ -139,7 +128,6 @@ Malware often modifies registry keys for persistence or evasion.
 
 ### 🔹 12. The 9th privilege related to the process
 Answer: SeTakeOwnershipPrivilege
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.privileges.Privs
 ```
@@ -149,7 +137,6 @@ This can be used to bypass file access restrictions, allowing the malware to exf
 
 ### 🔹 13. The secret message hidden in memory
 Answer: FL1TZ{U_G0T_M3!}
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.strings | grep -i FL1TZ
 ```
@@ -159,7 +146,6 @@ Likely an embedded challenge left by the attacker.
 
 ### 🔹 14. Number of threads related to the process
 Answer: 5
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.thrdscan
 ```
@@ -169,7 +155,6 @@ More threads often mean parallel execution, typical for backdoors and network-ba
 
 ### 🔹 15. The process used a DLL for system calls
 Answer: ntdll.dll
-Volatility Plugin: 
 ```
 python3 vol.py -f memdump.mem windows.dlllist | grep -i jsc.exe
 ```
