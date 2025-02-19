@@ -26,138 +26,137 @@
 
 ## 📌 Key Findings
 ### 🔹 1. Path of the malicious process
-Answer: C:\Windows\Microsoft.NET\Framework\v4.0.30319\jsc.exe
+- Answer: C:\Windows\Microsoft.NET\Framework\v4.0.30319\jsc.exe
 ```
 python3 vol.py -f memdump.mem windows.cmdline
 ```
 📝 Explanation:
-The command line of the running process (jsc.exe) shows that it resides inside the .NET Framework directory, which is suspicious.
+- The command line of the running process (jsc.exe) shows that it resides inside the .NET Framework directory, which is suspicious.
 This suggests that the malware is abusing .NET components to execute its payload.
 
 ### 🔹 2. Find the SID and the username the malware was running under
-Answer: S-1-5-21-1261973874-1698488304-1739942524-1001_Zyyz
+- Answer: S-1-5-21-1261973874-1698488304-1739942524-1001_Zyyz
 ```
 python3 vol.py -f memdump.mem windows.getsids.GetSIDS
 ```
 📝 Explanation:
-SID (Security Identifier) identifies the user account under which the process was executed.
-Here, the malware ran under the user Zyyz, meaning the attacker executed it with user-level privileges.
+- SID (Security Identifier) identifies the user account under which the process was executed.
+- Here, the malware ran under the user Zyyz, meaning the attacker executed it with user-level privileges.
 
 ### 🔹 3. NTLM hash of the user
-Answer: 7eb59e280c8fbc878955e0269cbe2ae9
+- Answer: 7eb59e280c8fbc878955e0269cbe2ae9
 ```
 python3 vol.py -f memdump.mem windows.getsids.hashdump
 ```
 📝 Explanation:
-The NTLM hash represents the user's password hash stored in memory.
-Attackers can use Pass-the-Hash (PtH) attacks to authenticate without knowing the plaintext password.
+- The NTLM hash represents the user's password hash stored in memory.
+- Attackers can use Pass-the-Hash (PtH) attacks to authenticate without knowing the plaintext password.
 
 ### 🔹 4. City of the attacker
-Answer: Amsterdam
+- Answer: Amsterdam
 ```
 python3 vol.py -f memdump.mem windows.netscan
 ```
-lookup (for IP related to jsc.exe)
+- lookup (for IP related to jsc.exe)
 📝 Explanation:
-The malware established a network connection to an attacker-controlled server.
-Reverse lookup of the IP address associated with jsc.exe revealed that it was linked to a server in Amsterdam.
+- The malware established a network connection to an attacker-controlled server.
+- Reverse lookup of the IP address associated with jsc.exe revealed that it was linked to a server in Amsterdam.
 
 ### 🔹 5. Ending address of the executable
-Answer: 0xf8dfff
+- Answer: 0xf8dfff
 ```
 python3 vol.py -f memdump.mem windows.vadinfo
 ```
 📝 Explanation:
-The ending address of jsc.exe in memory helps determine the memory range allocated to the executable.
-This is useful for identifying code injection or memory-resident malware.
+- The ending address of jsc.exe in memory helps determine the memory range allocated to the executable.
+- This is useful for identifying code injection or memory-resident malware.
 
 ### 🔹 6. Memory protection flag of the process
-Answer: PAGE_EXECUTE_WRITECOPY
+- Answer: PAGE_EXECUTE_WRITECOPY
 ```
 python3 vol.py -f memdump.mem windows.vadinfo
 ```
 📝 Explanation:
-This protection flag means that memory pages can be executed and modified.
-This is often used by malware to inject shellcode into processes.
+- This protection flag means that memory pages can be executed and modified.
+- This is often used by malware to inject shellcode into processes.
 
 ### 🔹 7. The process manipulated a DLL for cryptographic functions
-Answer: \Windows\SysWOW64\cryptbase.dll
+- Answer: \Windows\SysWOW64\cryptbase.dll
 ```
 python3 vol.py -f memdump.mem windows.vadinfo
 ```
 📝 Explanation:
-cryptbase.dll is a Windows DLL used for encryption and decryption functions.
-The malware likely used it to steal sensitive data like passwords, encryption keys, or Bitcoin wallets.
+- cryptbase.dll is a Windows DLL used for encryption and decryption functions.
+- The malware likely used it to steal sensitive data like passwords, encryption keys, or Bitcoin wallets.
 
 ### 🔹 8. Name of the computer
-Answer: DESKTOP-AJM6HKU
+- Answer: DESKTOP-AJM6HKU
 ```
 python3 vol.py -f memdump.mem windows.envars
 ```
 📝 Explanation:
-The malware retrieves the computer name to fingerprint the infected system.
-This is useful for the attacker to identify unique victims.
+- The malware retrieves the computer name to fingerprint the infected system.
+- This is useful for the attacker to identify unique victims.
 
 ### 🔹 9. The process used a temporary variable. Give its path.
-Answer: C:\Users\Zyyz\AppData\Local\Temp
+- Answer: C:\Users\Zyyz\AppData\Local\Temp
 ```
 python3 vol.py -f memdump.mem windows.envars
 ```
 📝 Explanation:
-Many malware strains drop temporary files in the AppData\Local\Temp directory.
-These are often deleted after execution to cover tracks.
+- Many malware strains drop temporary files in the AppData\Local\Temp directory.
+- These are often deleted after execution to cover tracks.
 
 ### 🔹 10. Creation time of the process
-Answer: 2025-02-04 03:21:09 UTC
+- Answer: 2025-02-04 03:21:09 UTC
 ```
 python3 vol.py -f memdump.mem windows.pstree
 ```
 📝 Explanation:
-Knowing when the malware was created helps in timeline analysis.
-This timestamp tells us exactly when the malware was executed on the system.
+- Knowing when the malware was created helps in timeline analysis.
+- This timestamp tells us exactly when the malware was executed on the system.
 
 ### 🔹 11. The process interacted with a Windows user registry. Give its path.
-Answer:
-HKEY_USERS\S-1-5-21-1261973874-1698488304-1739942524-1001\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION
+- Answer: HKEY_USERS\S-1-5-21-1261973874-1698488304-1739942524-1001\SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION
 ```
 python3 vol.py -f memdump.mem windows.handles
 ```
 📝 Explanation:
-This registry path stores system settings.
-Malware often modifies registry keys for persistence or evasion.
+- This registry path stores system settings.
+- Malware often modifies registry keys for persistence or evasion.
 
 ### 🔹 12. The 9th privilege related to the process
-Answer: SeTakeOwnershipPrivilege
+- Answer: SeTakeOwnershipPrivilege
 ```
 python3 vol.py -f memdump.mem windows.privileges.Privs
 ```
 📝 Explanation:
-SeTakeOwnershipPrivilege allows a process to take ownership of files and objects.
-This can be used to bypass file access restrictions, allowing the malware to exfiltrate files.
+- SeTakeOwnershipPrivilege allows a process to take ownership of files and objects.
+- This can be used to bypass file access restrictions, allowing the malware to exfiltrate files.
 
 ### 🔹 13. The secret message hidden in memory
-Answer: FL1TZ{U_G0T_M3!}
+- Answer: FL1TZ{U_G0T_M3!}
 ```
 python3 vol.py -f memdump.mem windows.strings | grep -i FL1TZ
 ```
 📝 Explanation:
-Searching for ASCII and Unicode strings in memory led to discovering this flag inside the malware’s memory space.
-Likely an embedded challenge left by the attacker.
+- Searching for ASCII and Unicode strings in memory led to discovering this flag inside the malware’s memory space.
+- Likely an embedded challenge left by the attacker.
 
 ### 🔹 14. Number of threads related to the process
-Answer: 5
+- Answer: 5
 ```
 python3 vol.py -f memdump.mem windows.thrdscan
 ```
 📝 Explanation:
-Threads indicate active execution paths within the process.
-More threads often mean parallel execution, typical for backdoors and network-based malware.
+- Threads indicate active execution paths within the process.
+- More threads often mean parallel execution, typical for backdoors and network-based malware.
 
 ### 🔹 15. The process used a DLL for system calls
-Answer: ntdll.dll
+- Answer: ntdll.dll
 ```
 python3 vol.py -f memdump.mem windows.dlllist | grep -i jsc.exe
 ```
 📝 Explanation:
-ntdll.dll is a critical Windows DLL responsible for system calls and low-level OS interactions.
-Malware often hooks ntdll.dll to hide malicious activities.
+- ntdll.dll is a critical Windows DLL responsible for system calls and low-level OS interactions.
+- Malware often hooks ntdll.dll to hide malicious activities.
