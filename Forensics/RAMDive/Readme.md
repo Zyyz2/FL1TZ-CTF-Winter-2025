@@ -161,9 +161,3 @@ python3 vol.py -f memdump.mem windows.dlllist | grep -i jsc.exe
 📝 Explanation:
 ntdll.dll is a critical Windows DLL responsible for system calls and low-level OS interactions.
 Malware often hooks ntdll.dll to hide malicious activities.
-
-## 🎯 Conclusion
-The jsc.exe process turned out to be a Remote Access Trojan (RAT).
-It exfiltrated user files, searched for Bitcoin wallets, and maintained persistence.
-Using Volatility 3, we successfully uncovered the attack chain, privileges used, registry modifications, and hidden data.
-## 🛡️ Memory forensics is a game-changer in malware investigations! 🚀
