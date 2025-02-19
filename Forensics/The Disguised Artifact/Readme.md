@@ -20,7 +20,7 @@ The output is data, indicating that the file type is not recognized. This sugges
 ```
 sudo mount -o loop FLAG.iso /mnt/iso
 ```
--On Windows, use a tool like PowerISO or WinCDEmu to mount the ISO file.
+- On Windows, use a tool like PowerISO or WinCDEmu to mount the ISO file.
 
 ### 5️⃣ Fixing the Corrupted Image
 - After mounting the ISO, you will find a PNG file inside. This PNG file is also corrupted. To fix it:
