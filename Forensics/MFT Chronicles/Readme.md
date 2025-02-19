@@ -46,4 +46,4 @@ Answer: mimikatz.exe
 ##### 🔹 Explanation: Mimikatz is a well-known post-exploitation tool used to extract credentials, security keys, and NTLM hashes from memory. It allows attackers to perform pass-the-hash, pass-the-ticket, and other credential theft techniques.
 
 # 🏁 Conclusion
-## By carefully analyzing the MFT records, we successfully reconstructed the attack timeline, identified key artifacts, and retrieved forensic evidence. This highlights the importance of MFT analysis in incident response and digital forensics. 🚀
+### By carefully analyzing the MFT records, we successfully reconstructed the attack timeline, identified key artifacts, and retrieved forensic evidence. This highlights the importance of MFT analysis in incident response and digital forensics. 🚀
