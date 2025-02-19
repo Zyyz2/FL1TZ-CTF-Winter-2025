@@ -1,7 +1,5 @@
 # 🕵️‍♂️ Unveiled - Hidden Clues in an Image  
 
-## 📌 Steps to Solve  
-
 1. **Read the `license.txt` File**  
    - You'll find the following message :
      ```
