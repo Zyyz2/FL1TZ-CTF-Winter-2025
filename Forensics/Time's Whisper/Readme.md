@@ -23,7 +23,7 @@ icmp → Captures only ICMP packets.
 
 ### 4️⃣ Extracting the Flag
 
-- To automate the extraction process, we write a Python script that:
+To automate the extraction process, we write a Python script that:
 * Reads the TTL values from the filtered ICMP request packets.
 * Extracts the last two significant bits from each value.
 * Concatenates the bits to form a binary string.
