@@ -23,9 +23,7 @@
 #### Using Volatility, you can find out if a malicious process was lurking in the shadows, what user accounts were snooping around, and even the last-minute panic activity before things went south.
 #### Basically, it’s like CSI for your computer's brain—but instead of solving murders, you're catching cybercriminals! 
 
-```
-python3 vol.py -f memdump.mem windows.cmdline
-```
+
 ## 📌 Key Findings
 ### 🔹 1. Path of the malicious process
 Answer: C:\Windows\Microsoft.NET\Framework\v4.0.30319\jsc.exe
