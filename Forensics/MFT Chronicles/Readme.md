@@ -3,7 +3,7 @@
 - The Master File Table (MFT) is a critical component of the NTFS file system. It keeps records of all files and directories on an NTFS-formatted disk, including their names, timestamps, attributes, and data location. Every file has a corresponding entry in the MFT, making it a valuable forensic artifact for investigating file activities, deletions, and modifications.
 
 ## 📌 Steps to Solve
-### 1️⃣ Parsing the MFT File
+- 1️⃣ Parsing the MFT File
 - We use MFTEcmd.exe, a tool from Eric Zimmermann, to parse the MFT file into a CSV file for easy searching and analysis.
 
 #### 🔹 Command to extract MFT data:
